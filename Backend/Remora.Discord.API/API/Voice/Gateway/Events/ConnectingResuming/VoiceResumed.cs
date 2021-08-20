@@ -1,5 +1,5 @@
 //
-//  Payload.cs
+//  VoiceResumed.cs
 //
 //  Author:
 //       Jarl Gullberg <jarl.gullberg@gmail.com>
@@ -21,16 +21,11 @@
 //
 
 using JetBrains.Annotations;
-using Remora.Discord.API.Abstractions.Gateway;
+using Remora.Discord.API.Abstractions.Voice.Gateway.Events;
 
-#pragma warning disable CS1591
-
-namespace Remora.Discord.API
+namespace Remora.Discord.API.Voice.Gateway.Events
 {
-    /// <summary>
-    /// Represents a payload from the Discord gateway.
-    /// </summary>
-    /// <typeparam name="TData">The data type encapsulated in the payload.</typeparam>
+    /// <inheritdoc cref="Remora.Discord.API.Abstractions.Voice.Gateway.Events.IVoiceResumed" />
     [PublicAPI]
-    public record Payload<TData>(TData Data) : IPayload<TData> where TData : IGatewayPayloadData;
+    public record VoiceResumed() : IVoiceResumed;
 }
